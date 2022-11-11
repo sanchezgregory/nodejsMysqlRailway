@@ -3,8 +3,10 @@ import {conn} from "./db.js";
 
 const app = express();
 
-app.get('/', (req, res) => {
-   res.send('Welcome back')
+app.get('/', async (req, res) => {
+   // Siempre responde con rows, es lo que se debe usar;
+   const [rows] = await conn.query(`SELECT * FROM users`);
+   res.json(rows);
 });
 
 app.get('/ping', async (req, res) => {
