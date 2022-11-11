@@ -1,0 +1,21 @@
+. Inicializar npm
+# npm init -y
+. Instalar los modulo necesarios
+# npm i express mysql2
+. Crear la carpeta src, y ahí dejar todos los archivos del desarrollo
+. Usar el modo import y no el modo require, se activa agregando "type":"module" en el archivo package.json
+. Instalar nodemon
+# npm i nodemon --save -D
+. Agregar en package.json dentro de scripts:
+ "scripts": {
+    "watch": "nodemon src/app.js"
+ }
+. Tbn se puede agregar configuracion para nodemon (ignorar archivos o carpetas) Agregando dentro de package.json
+    "nodemonConfig" : {
+        "delay": 2000;
+        "ignore": [
+            "docs/*",
+            "dist/*",
+            "*/*.css"
+        ]
+    }
